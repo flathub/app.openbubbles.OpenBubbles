@@ -22,21 +22,11 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/zenity.git
-        tag: 3.43.0
-        commit: 01e6d92f23f49414ba8ec4c5b3daf49222c1e31d
+        tag: 3.42.1
+        commit: 5aa43ab26e2f2ff5be16daabe15995799ffbaba2
     cleanup:
       - /share/*
       - /bin/gdialog
-  - name: xorg-libXmu
-    sources:
-      - type: git
-        url: https://github.com/freedesktop/xorg-libXmu.git
-        commit: 4f0939d69a17d37be414d0de7ff717e92e7e2b11
-  - name: wmctrl
-    sources:
-      - type: archive
-        url: https://sites.google.com/site/tstyblo/wmctrl/wmctrl-1.07.tar.gz
-        sha256: d78a1efdb62f18674298ad039c5cbdb1edb6e8e149bb3a8e3a01a4750aa3cca9
   - name: objectbox
     buildsystem: simple
     build-commands:
@@ -99,14 +89,14 @@ modules:
         only_arches:
           - x86_64
         dest: bluebubbles
-        url: https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.12.0%2B53/bluebubbles-linux-x86_64.tar
-        sha256: 11075d5f48948f83f3507ab9ab32543bd2e13be7240dcf55e5efce5d6b2884e1
+        url: https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.10.0%2B33/bluebubbles-linux-x86_64.tar
+        sha256: d256f5d550c143978cb679165009e45596fd9d8cbf5d74ea48cd5a6c06c4b2c6
       - type: archive
         only_arches:
           - aarch64
         dest: bluebubbles
-        url: https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.12.0%2B53/bluebubbles-linux-aarch64.tar
-        sha256: 4d3259b372ab40438517edba27f9f9d6858f89448b463e359e71396351c0fb05
+        url: https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.10.0%2B33/bluebubbles-linux-aarch64.tar
+        sha256: 5bcd1171bbd3fbc5dd254e47578d98ed0e948dcd92f0514f7f67588f65458d3b
       - type: file
         path: app.bluebubbles.BlueBubbles.metainfo.xml
       - type: file
