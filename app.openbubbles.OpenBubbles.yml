@@ -210,8 +210,8 @@ modules:
         only_arches:
           - x86_64
         dest: bluebubbles
-        url: https://github.com/OpenBubbles/openbubbles-app/releases/download//v1.15.0%2B144/bluebubbles-linux-x86_64.tar
-        sha256: 75c77f9d8e1566d2f5d5e3413a2be699dad27564689a34369cb2dd5439b178b6
+        url: https://github.com/OpenBubbles/openbubbles-app/releases/download//v1.15.0%2B146/bluebubbles-linux-x86_64.tar
+        sha256: 76dec098ddd8ba7d6a589b7763b9cbaf53de951e8829786759807482a9faa97a
       - type: file
         url: https://raw.githubusercontent.com/OpenBubbles/openbubbles-app/540e3999d170dd321a4f6a501228a1ef80db8a77/flatpak/app.openbubbles.OpenBubbles.metainfo.xml
         sha256: 0ca22c8eb3462b973f2eb2f0f57ee4208335f0b538b0d3dea435bb07eb12e749
