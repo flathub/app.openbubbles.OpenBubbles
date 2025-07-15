@@ -19,8 +19,8 @@ finish-args:
   - --share=network
   - --filesystem=xdg-download
 modules:
-  - 'shared-modules/libappindicator/libappindicator-gtk3-12.10.json'
-  - 'shared-modules/dbus-glib/dbus-glib.json'
+  - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
+  - shared-modules/dbus-glib/dbus-glib.json
   - name: zenity
     buildsystem: meson
     sources:
@@ -45,7 +45,7 @@ modules:
   - name: objectbox
     buildsystem: simple
     build-commands:
-      - 'cp -r libobjectbox.so /app/lib/'
+      - cp -r libobjectbox.so /app/lib/
     sources:
       - type: archive
         only-arches:
@@ -85,7 +85,7 @@ modules:
       - name: nv-codec-headers
         no-autogen: true
         make-install-args:
-          - 'PREFIX=/app'
+          - PREFIX=/app
         sources:
           - type: git
             url: https://github.com/FFmpeg/nv-codec-headers.git
@@ -119,8 +119,8 @@ modules:
         sources:
           - type: git
             url: https://code.videolan.org/videolan/libplacebo.git
-            tag: v7.349.0
-            commit: 1fd3c7bde7b943fe8985c893310b5269a09b46c5
+            tag: v7.351.0
+            commit: 3188549fba13bbdf3a5a98de2a38c2e71f04e21e
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
@@ -142,14 +142,14 @@ modules:
             sources:
               - type: git
                 url: https://github.com/google/shaderc.git
-                tag: v2025.1
-                commit: 0968768c61d4eb7dd861114412e904bb3d59b7b6
+                tag: v2025.3
+                commit: 8c2e602ce440b7739c95ff3d69cecb1adf6becda
                 x-checker-data:
                   type: git
                   tag-pattern: ^v(\d{4}\.\d{1,2})$
               - type: archive
-                url: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
-                sha256: 6b8577054c575573ead3ad71cb6a2c0b3397b64c746cc3c99e48cc5e324c1b55
+                url: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz
+                sha256: 8327fb8f3e9472346a004c91dbb83a6e5f3b36c3846c142cf8c0dc8fac8710f3
                 dest: third_party/spirv-tools
                 x-checker-data:
                   type: anitya
@@ -157,8 +157,8 @@ modules:
                   project-id: 334920
                   url-template: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-$version.tar.gz
               - type: archive
-                url: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
-                sha256: a96f8b4f2dfb18f7432e5c523e220ab0075372a9509e0c25fbff21c76af0de7c
+                url: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz
+                sha256: 5bbea925663d4cd2bab23efad53874f2718248a73dcaf9dd21dff8cb48e602fc
                 dest: third_party/spirv-headers
                 x-checker-data:
                   type: anitya
@@ -167,8 +167,8 @@ modules:
                   url-template: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-$version.tar.gz
               - type: git
                 url: https://github.com/KhronosGroup/glslang.git
-                tag: 15.1.0
-                commit: 1062752a891c95b2bfeed9e356562d88f9df84ac
+                tag: 15.4.0
+                commit: 8a85691a0740d390761a1008b4696f57facd02c4
                 dest: third_party/glslang
                 x-checker-data:
                   type: git
@@ -178,9 +178,9 @@ modules:
     only_arches:
       - x86_64
     build-commands:
-      - 'mkdir -p /app/bin'
-      - 'cp -r fmedia-1 /app/bin'
-      - 'ln -s /app/bin/fmedia-1/fmedia /app/bin/fmedia'
+      - mkdir -p /app/bin
+      - cp -r fmedia-1 /app/bin
+      - ln -s /app/bin/fmedia-1/fmedia /app/bin/fmedia
     sources:
       - type: archive
         dest: fmedia-1
@@ -189,8 +189,8 @@ modules:
   - name: arp
     buildsystem: simple
     build-commands:
-      - 'yes "" | make arp'
-      - 'install -Dm755 arp /app/bin/arp'
+      - yes "" | make arp
+      - install -Dm755 arp /app/bin/arp
     sources:
       - type: git
         url: https://github.com/ecki/net-tools.git
@@ -199,12 +199,12 @@ modules:
   - name: bluebubbles
     buildsystem: simple
     build-commands:
-      - 'cp -r bluebubbles /app/'
-      - 'mkdir -p /app/bin'
-      - 'ln -s /app/bluebubbles/bluebubbles /app/bin/bluebubbles'
-      - 'install -Dm644 app.openbubbles.OpenBubbles.metainfo.xml -t /app/share/metainfo/'
-      - 'install -Dm644 128x128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png'
-      - 'install -Dm644 app.openbubbles.OpenBubbles.desktop -t /app/share/applications/'
+      - cp -r bluebubbles /app/
+      - mkdir -p /app/bin
+      - ln -s /app/bluebubbles/bluebubbles /app/bin/bluebubbles
+      - install -Dm644 app.openbubbles.OpenBubbles.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 128x128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
+      - install -Dm644 app.openbubbles.OpenBubbles.desktop -t /app/share/applications/
     sources:
       - type: archive
         only_arches:
